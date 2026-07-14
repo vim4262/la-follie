@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour toi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="romantique-style.css">
+</head>
+<body>
+
+<div id="glow-follow"></div>
+<div id="petal-field"></div>
+<div class="progress-dots" id="dots"></div>
+
+<!-- STEP 1 -->
+<section class="step visible fade-in" data-step="0">
+  <div class="card">
+    <p class="eyebrow">un petit mot</p>
+    <h1 class="hero-title">Bonsoir <span class="accent">toi</span></h1>
+    <p class="hero-sub">Avant que ta soirée commence vraiment, j'avais envie de te faire un petit détour par ici.</p>
+    <button class="magic-btn" onclick="nextStep()">Entrer</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="1">
+  <div class="card">
+    <p class="eyebrow">ce que je pense</p>
+    <h2>Depuis qu'on discute</h2>
+    <p class="message-text">
+      Je ne vais pas te faire croire que j'ai un grand discours préparé. Juste ça : depuis qu'on parle,
+      j'y pense plus souvent que je ne l'admets facilement.
+      <br><br>
+      On n'est même pas dans la même filière, et en plus on est en vacances, donc pas moyen de se croiser par hasard
+      dans un couloir. Ça ne me presse pas pour autant — j'aime bien cette phase où on apprend à se connaître,
+      mot après mot. Mais je voulais que tu le saches, simplement : tu occupes une place agréable dans ma tête
+      ces derniers temps.
+    </p>
+    <p class="signature">à la rentrée, j'espère</p>
+    <br>
+    <button class="magic-btn" onclick="nextStep()">Continuer</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="2">
+  <div class="card">
+    <p class="eyebrow quiz-progress" id="quizProgress">1 / 3</p>
+    <h2 class="quiz-q" id="quizQuestion"></h2>
+    <div class="quiz-options" id="quizOptions"></div>
+    <p class="quiz-reaction" id="quizReaction"></p>
+    <button class="magic-btn" id="quizNextBtn" style="display:none;" onclick="handleQuizNext()">Suite</button>
+  </div>
+</section>
+
+<!-- STEP 4 - reply -->
+<section class="step" data-step="3">
+  <div class="card">
+    <p class="eyebrow">à ton tour</p>
+    <h2>Dis-moi</h2>
+    <p class="message-text" style="text-align:center;">
+      Pas besoin d'un roman. Juste un mot, une phrase, ce qui te passe par la tête là, maintenant.
+    </p>
+    <textarea id="replyInput" placeholder="Écris ta réponse ici..." rows="3"></textarea>
+    <button class="magic-btn" onclick="sendReply()">Envoyer</button>
+    <p class="hint">Ça ouvrira WhatsApp avec ton message déjà écrit — il ne restera qu'à l'envoyer.</p>
+  </div>
+</section>
+
+<script src="romantique-script.js"></script>
+</body>
+</html>
